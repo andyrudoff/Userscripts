@@ -22,7 +22,7 @@
     return (rect.bottom >= window.innerHeight);
   };
 
-  // HN Top-level thread additions all start with HNTop.
+  // HN Top-level thread additions all start with "HNTop".
   // Add the CSS...
   GM.addStyle(`
     #HNTopStripe {
@@ -68,7 +68,7 @@
   // since we want the <tr> elements, find them first,
   // then filter down to only those with the <td> element we want in them
   const $trs = [...document.querySelectorAll('table.comment-tree tr.athing')]
-    .filter(el => !! el.querySelector(':scope td.ind[indent="0"'))
+    .filter(el => !! el.querySelector(':scope td.ind[indent="0"]'));
 
   // go through them, add <span> tags to the comment headers
   for (const $tr of $trs) {
